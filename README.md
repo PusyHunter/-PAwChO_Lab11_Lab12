@@ -59,3 +59,7 @@ zawartosc tych plikow, przypominam, bedzie znajdowala sie w pliku tekstowym z za
 oto struktura foldera roboczego:
 
 ![image](https://github.com/PusyHunter/-PAwChO_Lab11_Lab12/assets/98088572/ba3873f9-cf19-4d69-9179-90c6fbd4dd1d)
+
+zatrzymanie uslug realizuje sie za pomoca polecenia:
+
+docker-compose down
