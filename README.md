@@ -46,3 +46,16 @@ teraz po zalogowaniu sie do phpMyAdmin mozna zobaczyc utworzona baze:
 oto wyglad katalogu roboczego:
 
 ![image](https://github.com/PusyHunter/-PAwChO_Lab11_Lab12/assets/98088572/54a9ec9b-d4a2-44dd-99e9-a470b9406ead)
+
+#Lab12
+Zadanie z lab 11 bylo zmodyfikowano:
+
+plik docker-compose byl podzielony na pliki bazowy oraz plik override(nowa struktura umieszczona jest na repo)
+
+oraz dodane pliki mysql_root_password.txt i mysql_password.txt, aby wykorzystac ich jako sekrety. Tych plikow
+nie bedzie na repo na github, ich trzeba bedzie utworzyc w folderze roboczym, gdzie znajduja sie pliki compose
+zawartosc tych plikow, przypominam, bedzie znajdowala sie w pliku tekstowym z zadaniem na moodle
+
+oto struktura foldera roboczego:
+
+![image](https://github.com/PusyHunter/-PAwChO_Lab11_Lab12/assets/98088572/ba3873f9-cf19-4d69-9179-90c6fbd4dd1d)
