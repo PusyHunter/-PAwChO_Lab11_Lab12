@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD_FILE: /run/secrets/mysql_password
+
+  phpmyadmin:
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password

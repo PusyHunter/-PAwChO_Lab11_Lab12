@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "4001:80"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/html:/usr/share/nginx/html
+      - ./nginx/snippets:/etc/nginx/snippets
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - php
+      - mysql
+
+  php:
+    image: php:8.0-fpm
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html
+    networks:
+      - backend
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - mysql-data:/var/lib/mysql
+    secrets:
+      - mysql_root_password
+      - mysql_password
+    networks:
+      - backend
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - "6001:80"
+    environment:
+      PMA_HOST: mysql
+    secrets:
+      - mysql_root_password
+    networks:
+      - backend
+
+networks:
+  frontend:
+  backend:
+
+volumes:
+  mysql-data:
+
+secrets:
+  mysql_root_password:
+    file: ./mysql_root_password.txt
+  mysql_password:
+    file: ./mysql_password.txt
